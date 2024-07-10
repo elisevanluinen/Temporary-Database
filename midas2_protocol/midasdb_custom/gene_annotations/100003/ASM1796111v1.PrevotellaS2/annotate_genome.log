@@ -1,0 +1,45 @@
+Annotating genome ASM1796111v1.PrevotellaS2 from species 100003.
+cd /scratch/users/elisevl/Temporary-Database/midas2_protocol/midasdb_custom/gene_annotations/100003/ASM1796111v1.PrevotellaS2; PYTHONPATH=/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages /home/users/elisevl/mambaforge/envs/midas2/bin/python -m midas2 annotate_genome --genome ASM1796111v1.PrevotellaS2 --zzz_worker_mode --midasdb_name newdb --midasdb_dir /scratch/users/elisevl/Temporary-Database/midas2_protocol/midasdb_custom --debug  &>> /scratch/users/elisevl/Temporary-Database/midas2_protocol/midasdb_custom/gene_annotations/100003/ASM1796111v1.PrevotellaS2/annotate_genome.log
+1720642787.0:  Executing midas2 subcommand annotate_genome.
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+1720642787.1:  Sleeping 4.335995031428277 seconds before retry 1 of <function download_tarball at 0x7f8e47baf670> with ('https://midasdb.pollard.gladstone.org/newdb/cleaned_imports/100003/ASM1796111v1.PrevotellaS2/ASM1796111v1.PrevotellaS2.fna.tar.gz', '/scratch/users/elisevl/Temporary-Database/midas2_protocol/midasdb_custom/cleaned_imports/100003/ASM1796111v1.PrevotellaS2'), {}.
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+1720642791.5:  Sleeping 8.799608264764581 seconds before retry 2 of <function download_tarball at 0x7f8e47baf670> with ('https://midasdb.pollard.gladstone.org/newdb/cleaned_imports/100003/ASM1796111v1.PrevotellaS2/ASM1796111v1.PrevotellaS2.fna.tar.gz', '/scratch/users/elisevl/Temporary-Database/midas2_protocol/midasdb_custom/cleaned_imports/100003/ASM1796111v1.PrevotellaS2'), {}.
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+Traceback (most recent call last):
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/__main__.py", line 28, in <module>
+    main()
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/__main__.py", line 24, in main
+    return subcommand_main(subcommand_args)
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/subcommands/annotate_genome.py", line 189, in main
+    annotate_genome(args)
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/subcommands/annotate_genome.py", line 54, in annotate_genome
+    annotate_genome_worker(args)
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/subcommands/annotate_genome.py", line 139, in annotate_genome_worker
+    cleaned_genome_fp = midas_db.fetch_file("imported_genome", species_id, genome_id, "fna")
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/models/midasdb.py", line 151, in fetch_file
+    return _fetch_file_from_s3((s3_path, local_path))
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/models/midasdb.py", line 322, in _fetch_file_from_s3
+    return download_tarball(s3_path, local_dir)
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/common/utils.py", line 468, in wrapped_operation
+    return operation(*args, **kwargs)
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/common/utils.py", line 662, in download_tarball
+    command(f"set -o pipefail; wget -q -O- {ref_path} | {uncompress_cmd} {local_dir}")
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/site-packages/midas2/common/utils.py", line 246, in command
+    return subprocess.run(cmd, shell=shell, **subproc_args)
+  File "/home/users/elisevl/mambaforge/envs/midas2/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'set -o pipefail; wget -q -O- https://midasdb.pollard.gladstone.org/newdb/cleaned_imports/100003/ASM1796111v1.PrevotellaS2/ASM1796111v1.PrevotellaS2.fna.tar.gz | tar -xz -C /scratch/users/elisevl/Temporary-Database/midas2_protocol/midasdb_custom/cleaned_imports/100003/ASM1796111v1.PrevotellaS2' returned non-zero exit status 2.
